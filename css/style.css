@@ -267,6 +267,7 @@
      border: none;
 }
  .main-header{
+    font-family: 'Times New Roman', Times, serif;
 }
  .search a{
      color: #d33b33;
@@ -2168,12 +2169,14 @@
      padding: 70px 0px;
 }
  .services-box-main{
+     font-family: 'Times New Roman', Times, serif;
      padding: 70px 0px;
 }
  .contact-box-main{
      padding: 70px 0px;
 }
  .contact-info-left{
+     font-family: 'Times New Roman', Times, serif;
      padding: 20px;
      background: rgba(0, 53, 68, 0.1);
 }
@@ -2207,6 +2210,7 @@
      color: #d33b33;
 }
  .contact-form-right{
+     font-family: 'Times New Roman', Times, serif;
      padding: 20px;
 }
  .contact-form-right h2{
