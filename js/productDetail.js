@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <div class="type-lb">
                                     <p class="sale">Sale</p>
                                 </div>
-                                <img src="images/${images.id}.jpg" class="img-fluid" alt="Image">
+                                <img src="images/big-img-02.jpg" class="img-fluid" alt="Image">
                                 <div class="mask-icon">
                                     <ul>
                                         <li><a href="#" data-toggle="tooltip"
