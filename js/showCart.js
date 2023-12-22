@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // ${item.thumbnail}
             productCard.innerHTML = `
                 <li>
-                    <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                    <a href="#" class="photo"><img src="images/${element.thumbnail}" class="cart-thumb" alt="" /></a>
                     <h6><a href="#">${element.name} </a></h6>
-                    <p>1x - <span class="price">${element.price * element.quantity}</span></p>
+                    <p>${element.quantity}x - <span class="price">${element.price * element.quantity}</span></p>
                 </li>
                 `;
             productContainer.appendChild(productCard);
