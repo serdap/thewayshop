@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     li.addEventListener("click", function () {
                         searchInput.value = suggestion.name;
                         suggestionsList.style.display = "none";
-                        displayProducts(suggestion.id);
+                        displayProducts(suggestion.name);
                     });
                     suggestionsList.appendChild(li);
                 });
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     function displayProducts(suggestionId) {
         // Assuming you have a function to fetch and display products based on the suggestion ID
-        const productsUrl = `http://127.0.0.1:8000/api/v1/products/${suggestionId}`;
+        const productsUrl = `http://127.0.0.1:8000/api/v1/productname?value=${suggestionId}`;
         fetch(productsUrl)
             .then(response => response.json())
             .then(productsData => {
@@ -54,7 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 productContainer.innerHTML = '';
                 productsData.data.forEach(product => {
                     const productCard = document.createElement("div");
+                    const productCard1 = document.createElement("div");
                     productCard.className = 'list-view-box';
+                    productCard1.className = 'col-sm-6 col-md-6 col-lg-4 col-xl-4';
             // ${item.thumbnail}
                     productCard.innerHTML = `
                     <div class="row">
@@ -64,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <div class="type-lb">
                                         <p class="sale">Sale</p>
                                     </div>
-                                    <img src="images/data_${item.thumbnail}.jpg" class="img-fluid" alt="Image">
+                                    <img src="images/big-img-02.jpg" class="img-fluid" alt="Image">
                                     <div class="mask-icon">
                                         <ul>
                                             <li><a href="#" data-toggle="tooltip"
@@ -91,13 +93,36 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <a class="btn hvr-hover" href="#">Add to Cart</a>
                             </div>
                         </div>
-                    </div>
-                `;
+                    </div>`;
 
+                    productCard1.innerHTML = `
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <div class="type-lb">
+                                    <p class="sale">Sale</p>
+                                </div>
+                                <img src="images/big-img-03.jpg" class="img-fluid" alt="Product Image">
+                                <div class="mask-icon">
+                                    <ul>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                    <a class="cart" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                            <div class="why-text">
+                                <h4>${product.name}</h4>
+                                <h5>${product.price}</h5>
+                            </div>
+                        </div>
+                    `;
+
+                    productContainer.appendChild(productCard1)
                     productContainerDetail.appendChild(productCard);
                 });
                 // Show the product container
-                document.getElementById("list-view-searcch").classList.add("show");
+                document.getElementById("list-view-search").classList.add("show");
             })
             .catch(error => console.error("Error fetching products:", error));
     }

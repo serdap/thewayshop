@@ -32,6 +32,9 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+
+    </style>
 
 </head>
 
@@ -271,7 +274,8 @@
                     <div class="product-categori">
                         <div class="search-product">
                             <form action="#">
-                                <input class="form-control" placeholder="Search here..." type="text">
+                                <input id="searchInput" class="form-control" placeholder="Search here..." type="text">
+                                <p id="suggestionsList"></p>
                                 <button type="submit"> <i class="fa fa-search"></i> </button>
                             </form>
                         </div>
@@ -661,6 +665,7 @@
     <script src="js/custom.js"></script>
     <script src="js/product.js"></script>
     <script src="js/productDetail.js"></script>
+    <script src="js/searchSuggestion.js"></script>
 </body>
 
 </html>
