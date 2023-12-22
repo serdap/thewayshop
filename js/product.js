@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#">Add to Cart</a>
+                                <a id="add-to-cart" class="cart">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
@@ -33,6 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                     </div>
                 `;
+            var addToCartButton = productCard.querySelector('#add-to-cart');
+            addToCartButton.addEventListener('click', function () {
+                addToCart(element);
+            });
             productContainer.appendChild(productCard);
         });
     }
@@ -76,9 +80,37 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.error('Lỗi khi tải dữ liệu:', error);
             });
     }
-
     // Khi tải trang lần đầu
     fetchData(currentPage);
 
 
 });
+function addToCart(product) {
+    const url = 'http://127.0.0.1:8000/api/v1/carts';
+    const value = {
+        "product_id":product.id,
+        "quantity":1
+    }
+    const options= {
+        method: "POST",
+        headers: {
+            "Content-Type":"Application/json",
+            "Authorization": "Bearer" + localStorage.getItem("token"),
+        },
+        body: JSON.stringify()
+    }
+
+    fetch(url, options)
+        .then(response => response.json)
+        .then(data =>{
+            if (data.status == 'success'){
+                alert('Thêm sản phẩm vào giỏ hàng thành công');
+            } else {
+                alert('Có lỗi xảy ra! Vui lòng thử lại sau');
+            }
+        }).catch(error =>{
+            console.log("lỗi rồi fix đê");
+            window.location.href = "index.html";
+        })
+}
+
