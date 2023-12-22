@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         data.forEach(element => {
             const productCard = document.createElement('div');
             productCard.className = 'list-view-box';
-            // ${item.thumbnail}
+            // ${element.thumbnail}
             productCard.innerHTML = `
                 <div class="row">
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <div class="type-lb">
                                     <p class="sale">Sale</p>
                                 </div>
-                                <img src="images/big-img-02.jpg" class="img-fluid" alt="Image">
+                                <img src="images/${element.thumbnail}" class="img-fluid" alt="Image">
                                 <div class="mask-icon">
                                     <ul>
                                         <li><a href="#" data-toggle="tooltip"
