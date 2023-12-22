@@ -43,11 +43,16 @@ document.addEventListener('DOMContentLoaded', function () {
                             <h4>${element.name}</h4>
                             <h5> $${element.price}</h5>
                             <p>${element.description}</p>
-                            <a class="btn hvr-hover" href="#">Add to Cart</a>
+                            <a id="add-to-cart1"class="btn hvr-hover" href="#">Add to Cart</a>
                         </div>
                     </div>
             </div>
                 `;
+
+            var addToCartButton = productCard.querySelector('#add-to-cart1');
+            addToCartButton.addEventListener('click', function () {
+                addToCart(element);
+            });
             productContainer.appendChild(productCard);
         });
     }
@@ -97,3 +102,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
+
+function addToCart(product) {
+    const url = 'http://127.0.0.1:8000/api/v1/carts';
+    const value = {
+        "product_id": product.id,
+        "quantity": 1
+    }
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "Application/json",
+            "Authorization": "Bearer" + localStorage.getItem("token"),
+        },
+        body: JSON.stringify()
+    }
+
+    fetch(url, options)
+        .then(response => response.json)
+        .then(data => {
+            if (data.status == 'success') {
+                alert('Thêm sản phẩm vào giỏ hàng thành công');
+            } else {
+                alert('Có lỗi xảy ra! Vui lòng thử lại sau');
+            }
+        }).catch(error => {
+            console.log("lỗi rồi fix đê");
+            window.location.href = "index.html";
+        })
+}
