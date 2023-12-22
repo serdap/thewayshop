@@ -266,7 +266,6 @@
  .our-link ul li:last-child{
      border: none;
 }
-
  .main-header{
     font-family: 'Times New Roman', Times, serif;
 }
@@ -544,18 +543,6 @@
      nav.navbar.navbar-inverse.navbar-mobile ul.nav{
          border-top: solid 1px #222;
     }
-}
- .arrow::before{
-     font-family: 'FontAwesome';
-     content: "\f0d7";
-     margin-left: 5px;
-     margin-top: 2px;
-     border: none;
-     display: inline-block;
-     vertical-align: inherit;
-     position: absolute;
-     right: 10px;
-     top: 28px;
 }
  .dropdown-toggle::after{
      display: none;
@@ -1253,19 +1240,7 @@
      -o-transition: all .3s ease-in-out;
      -ms-transition: all .3s ease-in-out;
 }
- .footer-link ul li a::before {
-     font-family: FontAwesome;
-     content: "\f105";
-     position: absolute;
-     left: 5px;
-     line-height: 30px;
-     font-size: 16px;
-     transition: all .3s ease-in-out;
-     -webkit-transition: all .3s ease-in-out;
-     -moz-transition: all .3s ease-in-out;
-     -o-transition: all .3s ease-in-out;
-     -ms-transition: all .3s ease-in-out;
-}
+
  .footer-link ul li a:hover::before {
      left: 5px;
 }
@@ -1846,16 +1821,9 @@
  .cart-box-main{
      padding: 70px 0px;
 }
-.table-main{
-    font-family: Arial, Helvetica, sans-serif;
-}
  .table-main table thead{
-    padding-bottom: 30px;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #333;
-    border-collapse: collapse;
-    border-bottom: 2px solid #dddddd;
+     background: #d33b33;
+     color: #ffffff;
 }
  .table-main .table thead th{
      font-size: 18px;
@@ -1866,9 +1834,6 @@
  .table-main table td{
      vertical-align: middle;
      font-size: 16px;
-}
-.table-main table td:nth-child(4){
-    width: 70px;
 }
  .quantity-box input{
      width: 60px;
