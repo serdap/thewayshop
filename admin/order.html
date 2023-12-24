@@ -47,7 +47,8 @@
                 <div class="panel-body">
                     <div class="form-group">
                         <label>Mã đơn hàng:</label>
-                        <input type="text" name="name" class="form-control" placeholder="ID...">
+                        <input  id="search-list-Input" name="name" class="form-control" placeholder="ID...">
+						<p id="suggestions-input-list"></p>
                     </div>
                 </div>
             </div>
@@ -72,101 +73,8 @@
 											<th>Chuyển trạng thái đơn hàng</th>
 										</tr>
 									</thead>
-									<tbody>
-										<tr>
-											<td>1</td>
-											<td>
-                                                <ul>
-                                                    <li>(3) cafe Đen</li>
-                                                    <li>(2) cafe Sữa</li>
-                                                    <li>(4) cafe Đá</li>
-                                                </ul>
-                                            </td>
-											<td>21.990.000 VND</td>
-											<td>Mã sản phẩm</td>
-											<td>Mã sản phẩm</td>
-											<td>
-												<a href="#" class="btn btn-warning"> <i class="fa-solid fa-angles-right"></i> </a>
-											</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>
-                                                <ul>
-                                                    <li>(3) cafe Đen</li>
-                                                    <li>(2) cafe Sữa</li>
-                                                    <li>(4) cafe Đá</li>
-                                                </ul>
-                                            </td>
-											<td>21.990.000 VND</td>
-											<td>Mã sản phẩm</td>
-											<td>Mã sản phẩm</td>
-											<td>
-												<a href="#" class="btn btn-warning"> <i class="fa-solid fa-angles-right"></i> </a>
-											</td>
-										</tr>
-										<tr>
-											<td>3</td>
-											<td>
-                                                <ul>
-                                                    <li>(3) cafe Đen</li>
-                                                    <li>(2) cafe Sữa</li>
-                                                    <li>(4) cafe Đá</li>
-                                                </ul>
-                                            </td>
-											<td>21.990.000 VND</td>
-											<td>Mã sản phẩm</td>
-											<td>Mã sản phẩm</td>
-											<td>
-												<a href="#" class="btn btn-warning"> <i class="fa-solid fa-angles-right"></i> </a>
-											</td>
-										</tr>
-										<tr>
-											<td>4</td>
-											<td>
-                                                <ul>
-                                                    <li>(3) cafe Đen</li>
-                                                    <li>(2) cafe Sữa</li>
-                                                    <li>(4) cafe Đá</li>
-                                                </ul>
-                                            </td>
-											<td>21.990.000 VND</td>
-											<td>Mã sản phẩm</td>
-											<td>Mã sản phẩm</td>
-											<td>
-												<a href="#" class="btn btn-warning"> <i class="fa-solid fa-angles-right"></i> </a>
-											</td>
-										</tr>
-										<tr>
-											<td>5</td>
-											<td>
-                                                <ul>
-                                                    <li>(3) cafe Đen</li>
-                                                    <li>(2) cafe Sữa</li>
-                                                    <li>(4) cafe Đá</li>
-                                                </ul>
-                                            </td>
-											<td>21.990.000 VND</td>
-											<td>Mã sản phẩm</td>
-											<td>Mã sản phẩm</td>
-											<td>
-												<a href="#" class="btn btn-warning"> <i class="fa-solid fa-angles-right"></i> </a>
-											</td>
-										</tr>
-										<tr>
-											<td>6</td>
-											<td><ul>
-                                                <li>(3) cafe Đen</li>
-                                                <li>(2) cafe Sữa</li>
-                                                <li>(4) cafe Đá</li>
-                                            </ul></td>
-											<td>21.990.000 VND</td>
-											<td>Mã sản phẩm</td>
-											<td>Mã sản phẩm</td>
-											<td>
-												<a href="#" class="btn btn-warning"> <i class="fa-solid fa-angles-right"></i> </a>
-											</td>
-										</tr>
+									<tbody id="list-status-admin">
+									
 									</tbody>
 								</table>							
 							</div>
@@ -184,6 +92,8 @@
 	<script src="js/easypiechart.js"></script>
 	<script src="js/easypiechart-data.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/status-order.js"></script>
+	<script src="js/search-order-admin.js"></script>
 	<script>
 		$('#calendar').datepicker({
 		});
